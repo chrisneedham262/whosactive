@@ -1,0 +1,64 @@
+{% extends 'base/main.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% include 'insight/sidebar.html' %}
+
+
+
+
+  <!-- ROLES -->
+  <section class="pt-6 pt-md-11">
+    <div class="container-lg">
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+
+                    <section class="hk-sec-wrapper">
+                        
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="table-wrap">
+                                    <table id="datable_3" class="table table-hover w-100 display">
+                                        <thead>
+                                           
+                                            <tr>
+                                                <th>URL</th>
+                                                <th>Location</th>
+                                                <th>Tech</th>
+                                               
+                                                
+                                        </thead>
+                                        <tbody>
+                                            {% for com in company %}
+                                            <tr>
+                                                <td> {{ com.url }}</td>
+                                                <td>{{ com.location }}</td>
+                                                <td>{{ com.tech }} </td>
+                                                
+                                                
+                                            </tr>
+                                            {% endfor %}
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        </section>
+                    
+                 </div>
+               </div>
+            </div>
+          </section>
+
+
+    </div>
+  </div>
+</div>
+  
+{% endblock content %}

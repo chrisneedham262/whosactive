@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block head_title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flag-icon.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flickity.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flickity-fade.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vs2015.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jarallax.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts/feather/fonts/feather.css' %}">
+
+    <!-- Map -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="{% static 'css/theme-sans-serif.min.css' %}" id="themeSansSerif" disabled>
+
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="{% static 'js/demo.min.js' %}"></script>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/theme.min.css' %}"> 
+  
+    
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+    <main class="border-multicolor">
+      <div class="container-lg d-flex flex-column">
+        <div class="row align-items-center justify-content-center min-vh-100 py-10 py-md-12 mt-n1">
+          <div class="col-12 col-md-7 col-lg-5 text-center">
+    {% block body %}
+
+    {% if messages %}
+    <div>
+      <strong>Messages:</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div>
+      <strong>Menu:</strong>
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+        {% else %}
+        <li><a href="{% url 'account_login' %}">Sign In</a></li>
+        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="container">
+    {% block content %}
+    {% endblock %}
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+    </div>
+  </div>
+</div>
+</div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>   
+ 
+ 
+</body>
+</html>

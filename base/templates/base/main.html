@@ -1,0 +1,341 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flag-icon.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flickity.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flickity-fade.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vs2015.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jarallax.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/feather.css' %}">
+
+   
+    <script src="{% static 'js/demo.min.js' %}"></script>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/theme.min.css' %}"> 
+
+     <!-- Main CSS -->
+     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> 
+  
+
+    <title>Who's Active</title>
+
+  </head>
+  <body>
+
+  
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-lg">
+
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="{% url 'home' %}">Who's Active?</a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Info
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row no-gutters">
+                    <div class="col">
+
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+
+                      <!-- Links -->
+                      <a class="dropdown-item" href="{% url 'about' %}">
+                        About
+                      </a>
+                     
+                      <a class="dropdown-item" href="{% url 'insight' %}">
+                        Insight
+                      </a>
+                      <a class="dropdown-item" href="{% url 'jobs' %}">
+                        Jobs
+                      </a>
+                      <a class="dropdown-item" href="{% url 'contact' %}">
+                        Contact
+                      </a>
+                    
+                    </div>
+                    <div class="col">
+
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+
+                      <!-- Links -->
+                      <a class="dropdown-item" href="{% url 'blogHome' %}">
+                        Blog
+                      </a>
+                      <a class="dropdown-item" href="##">
+                        Advice and guidance
+                      </a>
+                     
+
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="{% url 'home' %}">Who's Active?</a>
+
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Access
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="{% url 'account_signup' %}">
+
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>
+                    </div>
+
+                    <div class="ml-3">
+
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Sign Up
+                      </h6>
+
+                      <!-- Text -->
+                      <span>Registration for with email authentication</span>
+
+                    </div>
+
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="{% url 'account_login' %}">
+
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>
+                    </div>
+
+                    <div class="ml-3">
+
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Sign In
+                      </h6>
+
+                      <!-- Text -->
+                      <span>Welcome back to your account</span>
+
+                    </div>
+
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="{% url 'account_reset_password' %}">
+
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>
+                    </div>
+
+                    <div class="ml-3">
+
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Password reset
+                      </h6>
+
+                      <!-- Text -->
+                      <span>change password if forgotten or for extra security</span>
+
+                    </div>
+
+                  </a>
+                </div>
+
+              </div>
+            </li>
+            
+            
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+
+{% block content %}
+
+{% endblock content  %}
+
+    <!-- FOOTER -->
+    <footer class="footer py-8 py-md-11 bg-dark border-top border-gray-900">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-md-4">
+
+            <!-- Brand -->
+            <h2 class="font-family-serif text-white mb-1">
+              Goodkit
+            </h2>
+
+            <!-- Text -->
+            <p class="text-white-60">
+              A better way to build.
+            </p>
+
+          </div>
+          <div class="col-6 col-md">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-md">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Products
+            </h6>
+
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Homepage</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Legal</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Terms</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-md">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-md">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Connect
+            </h6>
+
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- Polyfills -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.find,Array.prototype.includes,Array.from,Object.entries,Promise,Object.assign"></script>
+
+    <!-- Libs JS -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/flickity.pkgd.min.js'%}"></script>
+    <script src="{% static 'js/flickity-fade.js'%}"></script></script>
+    <script src="{% static 'js/highlight.pack.min.js'%}"></script></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js'%}"></script></script>
+    <script src="{% static 'js/isotope.pkgd.min.js'%}"></script></script>
+    <script src="{% static 'js/jarallax.min.js'%}"></script></script>
+    <script src="{% static 'js/jarallax-video.min.js'%}"></script></script>
+    <script src="{% static 'js/jarallax-element.min.js'%}"></script></script>
+    <script src="{% static 'js/smooth-scroll.min.js'%}"></script></script>
+    <script src="{% static 'js/typed.min.js'%}"></script></script>
+
+    <!-- Map -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+
+    <!-- Theme JS -->
+    <script src="{% static 'js/theme.min.js'%}"></script></script>
+
+
+  </body>
+</html>
